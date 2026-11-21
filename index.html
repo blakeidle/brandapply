@@ -116,8 +116,8 @@ button,input,select,textarea{font:inherit} a{color:var(--accent)}
     </div>
     <div class="field"><label for="tone">Tone</label>
       <select id="tone">
-        <option value="warm">Warm &amp; inviting</option>
-        <option value="bold">Bold &amp; athletic</option>
+        <option value="warm">Warm & inviting</option>
+        <option value="bold">Bold & athletic</option>
         <option value="tech">Clean tech</option>
         <option value="luxury">Quiet luxury</option>
       </select>
@@ -207,18 +207,17 @@ button,input,select,textarea{font:inherit} a{color:var(--accent)}
     <h3 id="upgradeTitle">Upgrade BrandApply</h3>
     <p>Unlock unlimited kits, team sharing, and priority export presets. Stripe Payment Links are placeholders until live products are confirmed on Axon Stewardship, LLC.</p>
     <div class="plans">
-      <div class="plan"><div><div>Solo</div><b>$15/mo</b></div><a class="primary" id="cta-solo" href="#STRIPE_SOLO_LINK" style="text-decoration:none">Choose Solo</a></div>
-      <div class="plan"><div><div>Team</div><b>$39/mo</b></div><a class="primary" id="cta-team" href="#STRIPE_TEAM_LINK" style="text-decoration:none">Choose Team</a></div>
+      <div class="plan"><div><div>Solo</div><b>$15/mo</b></div><a class="primary" id="cta-solo" href="https://buy.stripe.com/3cI9ATcnb1Z69j92oRaIM03" style="text-decoration:none">Choose Solo</a></div>
+      <div class="plan"><div><div>Team</div><b>$39/mo</b></div><a class="primary" id="cta-team" href="https://buy.stripe.com/9B6bJ13QF8nu66X9RjaIM02" style="text-decoration:none">Choose Team</a></div>
     </div>
-    <p class="hint" style="color:var(--muted);margin-top:12px">Placeholders: <code>STRIPE_SOLO_LINK</code> · <code>STRIPE_TEAM_LINK</code></p>
     <button class="ghost" style="margin-top:12px;color:#111;border-color:var(--line);background:#fff;width:100%" type="button" id="closeUpgrade">Close</button>
   </div>
 </div>
 <div class="toast" id="toast" role="status"></div>
 
 <script>
-const STRIPE_SOLO_LINK = "#STRIPE_SOLO_LINK";
-const STRIPE_TEAM_LINK = "#STRIPE_TEAM_LINK";
+const STRIPE_SOLO_LINK = "https://buy.stripe.com/3cI9ATcnb1Z69j92oRaIM03";
+const STRIPE_TEAM_LINK = "https://buy.stripe.com/9B6bJ13QF8nu66X9RjaIM02";
 document.getElementById('cta-solo').href = STRIPE_SOLO_LINK;
 document.getElementById('cta-team').href = STRIPE_TEAM_LINK;
 
@@ -383,7 +382,7 @@ function exportSvg(){
   toast('SVG exported');
 }
 
-function escapeXml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function escapeXml(s){ return String(s).replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>').replace(/"/g,'"'); }
 
 function exportHtml(){
   const kit=kitFromForm();
