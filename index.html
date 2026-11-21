@@ -382,7 +382,7 @@ function exportSvg(){
   toast('SVG exported');
 }
 
-function escapeXml(s){ return String(s).replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>').replace(/"/g,'"'); }
+function escapeXml(s){ return String(s).replace(/&/g,'\x26amp;').replace(/</g,'\x26lt;').replace(/>/g,'\x26gt;').replace(/"/g,'\x26quot;'); }
 
 function exportHtml(){
   const kit=kitFromForm();
